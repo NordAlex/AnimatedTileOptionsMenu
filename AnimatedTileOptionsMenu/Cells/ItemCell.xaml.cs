@@ -16,5 +16,10 @@ namespace AnimatedTileOptionsMenu.Cells
         {
             InitializeComponent();
         }
+
+        private void OpenOptions(object sender, EventArgs args)
+        {
+
+        }
     }
 }

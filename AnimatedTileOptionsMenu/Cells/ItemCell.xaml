@@ -1,8 +1,37 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="AnimatedTileOptionsMenu.Cells.ItemCell">
-    <ViewCell.View>
-        <StackLayout>
-            <Label Text="Hello Xamarin.Forms!" />
-        </StackLayout>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+          x:Class="AnimatedTileOptionsMenu.Cells.ItemCell">
+  <ViewCell.View>
+        <Grid Margin="0,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="400"/>
+            </Grid.RowDefinitions>
+
+           <ContentView x:Name="Options" WidthRequest="3" HeightRequest="40" BackgroundColor="Green" IsVisible="false">
+               <!--<Grid.ColumnDefinitions>
+                   <ColumnDefinition Width="*"/>
+                   <ColumnDefinition Width="*"/>
+                   <ColumnDefinition Width="*"/>
+               </Grid.ColumnDefinitions>
+               <Button Grid.Column="0" Text="1234"/>
+               <Button Grid.Column="1" Text="4321"/>
+               <Button Grid.Column="2" Text="1234"/>-->
+           </ContentView>
+
+            <StackLayout Grid.Row="1" Orientation="Horizontal">
+                
+            <Label  x:Name="ProfileName" Text="{Binding Name}" HorizontalOptions="StartAndExpand" />
+
+            <Button Text="Menu" Clicked="OpenOptions" HorizontalOptions="End" />
+
+            </StackLayout>
+
+            <ffimageloading:CachedImage Grid.Row="2" Aspect="AspectFill"
+                Source="{Binding ImageUrl}"/>
+        </Grid>
     </ViewCell.View>
 </ViewCell>
